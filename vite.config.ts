@@ -32,7 +32,7 @@ export default defineConfig({
         'zlib',
       ],
       output: {
-        manualChunks(id) {
+        manualChunks(id: string | string[]) {
           if (id.includes('node_modules')) {
             return 'vendor';
           }
@@ -40,9 +40,9 @@ export default defineConfig({
       },
     },
     // // Limit memory usage
-    // target: 'es2015',
+    target: 'es2015',
     minify: false,
     sourcemap: false,
-    // chunkSizeWarningLimit: 2000
+    chunkSizeWarningLimit: 2000
   },
 });
