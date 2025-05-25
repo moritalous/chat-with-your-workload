@@ -11,7 +11,26 @@ export default defineConfig({
     },
     rollupOptions: {
       // Externalize node built-in modules
-      external: ['node:child_process', 'node:path', 'node:url'],
+      external: [
+        'node:child_process',
+        'node:path',
+        'node:url',
+        'path',
+        'fs',
+        'os',
+        'crypto',
+        'child_process',
+        'module',
+        'assert',
+        'util',
+        'fs/promises',
+        'stream',
+        'url',
+        'net',
+        'https',
+        'constants',
+        'zlib',
+      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
