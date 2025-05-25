@@ -30,7 +30,6 @@ export default defineConfig({
         'https',
         'constants',
         'zlib',
-        /aws-cdk-lib.*/,
       ],
       output: {
         manualChunks(id: string | string[]) {
