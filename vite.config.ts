@@ -30,6 +30,7 @@ export default defineConfig({
         'https',
         'constants',
         'zlib',
+        /aws-cdk-lib.*/,
       ],
       output: {
         manualChunks(id: string | string[]) {
@@ -40,9 +41,9 @@ export default defineConfig({
       },
     },
     // // Limit memory usage
-    target: 'es2015',
-    minify: false,
-    sourcemap: false,
-    chunkSizeWarningLimit: 2000
+    // target: 'es2015',
+    // minify: false,
+    // sourcemap: false,
+    // chunkSizeWarningLimit: 2000,
   },
 });
