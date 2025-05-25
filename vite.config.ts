@@ -11,26 +11,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // Externalize node built-in modules
-      external: [
-        'node:child_process',
-        'node:path',
-        'node:url',
-        'path',
-        'fs',
-        'os',
-        'crypto',
-        'child_process',
-        'module',
-        'assert',
-        'util',
-        'fs/promises',
-        'stream',
-        'url',
-        'net',
-        'https',
-        'constants',
-        'zlib',
-      ],
+      external: ['node:child_process', 'node:path', 'node:url'],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
@@ -39,5 +20,10 @@ export default defineConfig({
         },
       },
     },
+    // // Limit memory usage
+    // target: 'es2015',
+    minify: false,
+    sourcemap: false,
+    // chunkSizeWarningLimit: 2000
   },
 });
